@@ -1,4 +1,5 @@
 
+import 'package:chatapp/pages/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
             email: email, password: password);
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) =>  ChatScreen(),
+            builder: (context) =>  LoginScreen(),
           ),
         );
       }

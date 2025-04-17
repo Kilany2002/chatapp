@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/auth/auth_service.dart';
 import '../widget/my_button.dart';
 import '../widget/text_field.dart';
+import 'login.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -66,6 +67,34 @@ class RegisterScreen extends StatelessWidget {
                 MyButton(
                   text: 'Register',
                     onTap: () => register(context)                ),
+
+                const SizedBox(
+                  height: 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Had an account?'),
+                    SizedBox(
+                      width: 4,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
+                      },
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                            color: Colors.teal,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                )
 
               ],
             ),
